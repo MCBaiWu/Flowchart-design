@@ -1,0 +1,23 @@
+{
+  "id": "cfg_complex",
+  "name": "Complex Flow",
+  "nodes": [
+    {"id": "start", "label": "Start", "width": 80, "height": 40, "type": "entry"},
+    {"id": "init", "label": "init", "width": 100, "height": 60},
+    {"id": "check_a", "label": "check A", "width": 100, "height": 60},
+    {"id": "check_b", "label": "check B", "width": 100, "height": 60},
+    {"id": "process", "label": "process", "width": 100, "height": 60},
+    {"id": "update", "label": "update", "width": 100, "height": 60},
+    {"id": "end", "label": "End", "width": 80, "height": 40, "type": "exit"}
+  ],
+  "edges": [
+    {"id": "e1", "sourceId": "start", "targetId": "init"},
+    {"id": "e2", "sourceId": "init", "targetId": "check_a"},
+    {"id": "e3", "sourceId": "check_a", "targetId": "check_b"},
+    {"id": "e4", "sourceId": "check_a", "targetId": "end"},
+    {"id": "e5", "sourceId": "check_b", "targetId": "process"},
+    {"id": "e6", "sourceId": "check_b", "targetId": "update"},
+    {"id": "e7", "sourceId": "process", "targetId": "update"},
+    {"id": "e8", "sourceId": "update", "targetId": "check_a"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cfg_switch_case",
+  "name": "Switch Case",
+  "nodes": [
+    {"id": "entry", "label": "Entry", "width": 80, "height": 40, "type": "entry"},
+    {"id": "switch", "label": "switch(eax)", "width": 120, "height": 60},
+    {"id": "case1", "label": "case 1", "width": 100, "height": 60},
+    {"id": "case2", "label": "case 2", "width": 100, "height": 60},
+    {"id": "default", "label": "default", "width": 100, "height": 60},
+    {"id": "exit", "label": "Exit", "width": 80, "height": 40, "type": "exit"}
+  ],
+  "edges": [
+    {"id": "e1", "sourceId": "entry", "targetId": "switch"},
+    {"id": "e2", "sourceId": "switch", "targetId": "case1"},
+    {"id": "e3", "sourceId": "switch", "targetId": "case2"},
+    {"id": "e4", "sourceId": "switch", "targetId": "default"},
+    {"id": "e5", "sourceId": "case1", "targetId": "exit"},
+    {"id": "e6", "sourceId": "case2", "targetId": "exit"},
+    {"id": "e7", "sourceId": "default", "targetId": "exit"}
+  ]
+}

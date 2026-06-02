@@ -1,0 +1,21 @@
+{
+  "id": "cfg_nested_loop",
+  "name": "Nested Loop",
+  "nodes": [
+    {"id": "entry", "label": "Entry", "width": 80, "height": 40, "type": "entry"},
+    {"id": "outer_cond", "label": "outer < 3", "width": 120, "height": 60},
+    {"id": "inner_cond", "label": "inner < 3", "width": 120, "height": 60},
+    {"id": "inner_body", "label": "inner++", "width": 100, "height": 60},
+    {"id": "outer_inc", "label": "outer++", "width": 100, "height": 60},
+    {"id": "exit", "label": "Exit", "width": 80, "height": 40, "type": "exit"}
+  ],
+  "edges": [
+    {"id": "e1", "sourceId": "entry", "targetId": "outer_cond"},
+    {"id": "e2", "sourceId": "outer_cond", "targetId": "inner_cond"},
+    {"id": "e3", "sourceId": "outer_cond", "targetId": "exit"},
+    {"id": "e4", "sourceId": "inner_cond", "targetId": "inner_body"},
+    {"id": "e5", "sourceId": "inner_cond", "targetId": "outer_inc"},
+    {"id": "e6", "sourceId": "inner_body", "targetId": "inner_cond"},
+    {"id": "e7", "sourceId": "outer_inc", "targetId": "outer_cond"}
+  ]
+}

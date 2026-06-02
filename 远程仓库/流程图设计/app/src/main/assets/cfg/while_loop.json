@@ -1,0 +1,16 @@
+{
+  "id": "cfg_while_loop",
+  "name": "While Loop",
+  "nodes": [
+    {"id": "entry", "label": "Entry", "width": 80, "height": 40, "type": "entry"},
+    {"id": "loop_cond", "label": "cmp ecx, 10", "width": 120, "height": 60},
+    {"id": "loop_body", "label": "inc ecx", "width": 100, "height": 60},
+    {"id": "exit", "label": "Exit", "width": 80, "height": 40, "type": "exit"}
+  ],
+  "edges": [
+    {"id": "e1", "sourceId": "entry", "targetId": "loop_cond"},
+    {"id": "e2", "sourceId": "loop_cond", "targetId": "loop_body", "label": "jl"},
+    {"id": "e3", "sourceId": "loop_cond", "targetId": "exit", "label": "jge"},
+    {"id": "e4", "sourceId": "loop_body", "targetId": "loop_cond"}
+  ]
+}
